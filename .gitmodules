@@ -1,0 +1,3 @@
+[submodule "base_model"]
+	path = base_model
+	url = https://github.com/BioMedAI-UCSC/CGML_model_base.git
