@@ -4,3 +4,6 @@
 [submodule "benchmark"]
 	path = benchmark
 	url = https://github.com/BioMedAI-UCSC/CGML_Benchmark.git
+[submodule "openmm_generate"]
+	path = openmm_generate
+	url = https://github.com/BioMedAI-UCSC/openmm_generate.git
