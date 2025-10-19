@@ -1,3 +1,6 @@
 [submodule "base_model"]
 	path = base_model
 	url = https://github.com/BioMedAI-UCSC/CGML_model_base.git
+[submodule "benchmark"]
+	path = benchmark
+	url = https://github.com/BioMedAI-UCSC/CGML_Benchmark.git
