@@ -7,3 +7,6 @@
 [submodule "openmm_generate"]
 	path = openmm_generate
 	url = https://github.com/BioMedAI-UCSC/openmm_generate.git
+[submodule "westpa_prop"]
+	path = westpa_prop
+	url = https://github.com/BioMedAI-UCSC/westpa_prop.git
