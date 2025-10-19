@@ -62,6 +62,3 @@ We welcome contributions, feature requests, and bug reports! Please use [GitHub 
 
 *License information will be added soon.*
 
-## Contact
-
-*Contact information and citations will be added soon.*
