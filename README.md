@@ -22,6 +22,9 @@ This repository contains scripts and tools that integrate multiple components of
 * **Benchmark Suite** (`benchmark`)  
   Qualitative and quantitative comparison tools for evaluating and validating models
 
+* **Shared Modules** (`module`)  
+  Repository containing all code and functions shared between base model, benchmark, openmm_generate, and westpa_prop.
+
 ## Status
 
 ⚠️ **IMPORTANT**: Our code is currently being ported and refactored from private repositories for public release. The full codebase with documentation and tutorials will be provided within one to two weeks.
