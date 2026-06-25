@@ -137,7 +137,7 @@ python {BASE_MODEL}/convert_westpa.py \\
     --westpa-dir "${{WP}}" \\
     --base-traj "${{WP}}/simulated_topology.pdb" \\
     --simulated-topology "${{WP}}/simulated_topology.pdb" \\
-    --output "{out}/${{pdb}}.h5" \\
+    --output "{out}/${{pdb}}/result/output_${{pdb}}.h5" \\
     --protein-name "${{pdb}}" \\
     --num-workers {s.num_workers}
 """
@@ -164,7 +164,7 @@ python {BASE_MODEL}/convert_westpa.py \\
                 "--westpa-dir", str(wp),
                 "--base-traj", str(wp / "simulated_topology.pdb"),
                 "--simulated-topology", str(wp / "simulated_topology.pdb"),
-                "--output", str(out / f"{pdb}.h5"),
+                "--output", str(out / pdb / "result" / f"output_{pdb}.h5"),
                 "--protein-name", pdb,
                 "--num-workers", str(s.num_workers),
             ], capture_output=True, text=True)
