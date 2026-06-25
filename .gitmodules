@@ -10,3 +10,6 @@
 [submodule "westpa_prop"]
 	path = westpa_prop
 	url = https://github.com/BioMedAI-UCSC/westpa_prop.git
+[submodule "tools/setup_tooling"]
+	path = tools/setup_tooling
+	url = git@github.com:BioMedAI-UCSC/cgml_setup_tooling.git

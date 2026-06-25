@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "name": "cgml-smoke-2ke6",
+  "run_id": "2026-06-25_smoke_2ke6",
+  "storage": {
+    "backend": "local",
+    "root": "/u/awaghili/FoundationModel/runs"
+  },
+  "cluster": {
+    "backend": "delta",
+    "account": "bbpa-dtai-gh",
+    "partition": "ghx4",
+    "mail_user": "alexander.w.aghili@gmail.com",
+    "extra_modules": ["cuda/12.9"],
+    "conda_env": "full_md_env"
+  },
+  "stages": {
+    "westpa_gen": {
+      "enabled": false,
+      "systems": ["2KE6"]
+    },
+    "convert": {
+      "enabled": true,
+      "systems": ["2KE6"],
+      "num_workers": 8
+    },
+    "preprocess": {
+      "enabled": true,
+      "prior": "CA_DNA_RNA",
+      "num_workers": 8
+    },
+    "train": {
+      "enabled": true,
+      "epochs": 2,
+      "lr": 5.0e-5,
+      "precision": "fp32",
+      "distributed": {
+        "enabled": false
+      }
+    },
+    "benchmark": {
+      "enabled": false
+    }
+  }
+}
