@@ -143,7 +143,10 @@ python {BASE_MODEL}/convert_westpa.py \\
 """
         return SbatchSpec(
             job_name=f"cgml-conv-{self.cfg.run_id}",
-            nodes=1, ntasks_per_node=1, gpus_per_node=0,
+            # ghx4 / DeltaAI rejects jobs requesting 0 GPUs even when the
+            # work is CPU-only. Request 1 GPU; the convert script will not
+            # use it.
+            nodes=1, ntasks_per_node=1, gpus_per_node=1,
             cpus_per_task=max(s.num_workers, 2),
             mem="32G", walltime="04:00:00",
             output=self.run_dir / "convert-%A_%a.out",
@@ -196,7 +199,10 @@ class PreprocessRunner(Stage):
         )
         return SbatchSpec(
             job_name=f"cgml-prep-{self.cfg.run_id}",
-            nodes=1, ntasks_per_node=1, cpus_per_task=s.num_workers,
+            # ghx4 / DeltaAI rejects 0-GPU jobs; request 1 even though
+            # preprocess is CPU-only.
+            nodes=1, ntasks_per_node=1, gpus_per_node=1,
+            cpus_per_task=s.num_workers,
             mem="64G", walltime="04:00:00",
             output=self.run_dir / "preprocess-%j.out",
             body=body,
